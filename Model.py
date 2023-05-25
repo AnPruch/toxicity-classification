@@ -1,3 +1,11 @@
+import subprocess
+import sys
+
+def install(package):
+    subprocess.run([sys.executable, "-m", "pip", "install", package], check=True)
+
+install('sklearn')
+
 import time
 import numpy as np
 import pandas as pd
