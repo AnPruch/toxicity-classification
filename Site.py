@@ -10,6 +10,7 @@ def install(package):
     subprocess.run([sys.executable, "-m", "pip", "install", package], check=True)
 
 install('pandas-profiling')
+install('streamlit-pandas-profiling')
 
 
 st.title('Автоматическое определение токсичных сообщений')
