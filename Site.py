@@ -1,12 +1,16 @@
+import subprocess
 import sys
-!{sys.executable} -m pip install -U pandas-profiling
-
 import streamlit as st
 import pandas as pd
-import pandas_profiling
-import numpy as np
 from streamlit_pandas_profiling import st_profile_report
 from Model import data, NBdata
+
+
+def install(package):
+    subprocess.run([sys.executable, "-m", "pip", "install", package], check=True)
+
+install('pandas-profiling')
+
 
 st.title('Автоматическое определение токсичных сообщений')
 st.write(
