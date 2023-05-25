@@ -7,12 +7,12 @@ from Model import data, NBdata
 def install(package):
     subprocess.run([sys.executable, "-m", "pip", "install", package], check=True)
 
-install('pandas-profiling')
-install('streamlit-pandas-profiling')
-
-import pandas_profiling
-from streamlit_pandas_profiling import st_profile_report
-
+try:
+    import pandas_profiling
+    from streamlit_pandas_profiling import st_profile_report
+except: 
+    install('pandas-profiling')
+    install('streamlit-pandas-profiling')
 
 
 st.title('Автоматическое определение токсичных сообщений')
