@@ -1,6 +1,5 @@
 import subprocess
 import sys
-import streamlit as st
 import pandas as pd
 from Model import data, NBdata
 
@@ -9,12 +8,21 @@ def install(package):
 
 try:
     import pandas_profiling
-    from streamlit_pandas_profiling import st_profile_report
-except: 
+except ModuleNotFoundError: 
     install('pandas-profiling')
+    
+try:
+    import streamlit as st
+except ModuleNotFoundError: 
+    install('streamlit')
+    
+try:
+    from streamlit_pandas_profiling import st_profile_report
+except ModuleNotFoundError: 
     install('streamlit-pandas-profiling')
 
 
+    
 st.title('Автоматическое определение токсичных сообщений')
 st.write(
     'Программа была обучена на дата-сете "Russian Language Toxic Comments": https://www.kaggle.com/datasets/blackmoon/russian-language-toxic-comments')
