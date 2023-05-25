@@ -4,7 +4,7 @@ import sys
 def install(package):
     subprocess.run([sys.executable, "-m", "pip", "install", package], check=True)
 
-install('sklearn')
+install('scikit-learn')
 
 import time
 import numpy as np
