@@ -1,3 +1,6 @@
+import sys
+!{sys.executable} -m pip install -U pandas-profiling
+
 import streamlit as st
 import pandas as pd
 import pandas_profiling
