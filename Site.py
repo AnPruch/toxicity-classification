@@ -7,19 +7,19 @@ def install(package):
     subprocess.run([sys.executable, "-m", "pip", "install", package], check=True)
 
 try:
-    from pandas_profiling import ProfileReport
-except ModuleNotFoundError: 
-    install('pandas-profiling')
-    
-try:
     import streamlit as st
 except ModuleNotFoundError: 
     install('streamlit')
     
-try:
-    from streamlit_pandas_profiling import st_profile_report
-except ModuleNotFoundError: 
-    install('streamlit-pandas-profiling')
+# try:
+#     from pandas_profiling import ProfileReport
+# except ModuleNotFoundError: 
+#     install('pandas-profiling')
+    
+# try:
+#     from streamlit_pandas_profiling import st_profile_report
+# except ModuleNotFoundError: 
+#     install('streamlit-pandas-profiling')
 
 
     
@@ -47,14 +47,14 @@ cr_matrix = pd.DataFrame(cr_matrix,
 st.table(cr_matrix)
 
 
-@st.cache_resource(experimental_allow_widgets=True)
-def More_Info():
-    profiled_data = ProfileReport(data, title='Data Report', explorative = True)
-    with st.expander("More info"):
-        st_profile_report(profiled_data, height=500)
+# @st.cache_resource(experimental_allow_widgets=True)
+# def More_Info():
+#     profiled_data = ProfileReport(data, title='Data Report', explorative = True)
+#     with st.expander("More info"):
+#         st_profile_report(profiled_data, height=500)
 
 
-More_Info()
+# More_Info()
 
 st.header('Попробовать написать комментарий и проверить его на токсичность')
 with st.form('new_comment'):
