@@ -7,7 +7,7 @@ def install(package):
     subprocess.run([sys.executable, "-m", "pip", "install", package], check=True)
 
 try:
-    import pandas_profiling
+    from pandas_profiling import ProfileReport
 except ModuleNotFoundError: 
     install('pandas-profiling')
     
@@ -49,7 +49,7 @@ st.table(cr_matrix)
 
 @st.cache_resource(experimental_allow_widgets=True)
 def More_Info():
-    profiled_data = data.profile_report()
+    profiled_data = ProfileReport(data, title='Data Report', explorative = True)
     with st.expander("More info"):
         st_profile_report(profiled_data, height=500)
 
