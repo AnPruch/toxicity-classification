@@ -6,16 +6,12 @@ def install(package):
 
 install('scikit-learn')
 
-import time
-import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import classification_report
-
-start_time = time.time()
 
 data = pd.read_csv('labeled.csv')
 
@@ -43,4 +39,3 @@ NBdata = Pipeline(
 NBdata.fit(X_train, y_train)
 pred_NBdata = NBdata.predict(X_test)
 print(classification_report(y_test, pred_NBdata))
-print("time elapsed: {:.2f}s".format(time.time() - start_time))
