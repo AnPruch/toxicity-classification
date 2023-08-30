@@ -1,5 +1,4 @@
-import sklearn
-print(sklearn.__version__)
+import scikit_learn as sklearn
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
