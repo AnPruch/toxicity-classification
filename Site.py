@@ -1,16 +1,8 @@
-import subprocess
-import sys
 import pandas as pd
 from Model import data, NBdata
+import streamlit as st
 
-def install(package):
-    subprocess.run([sys.executable, "-m", "pip", "install", package], check=True)
 
-try:
-    import streamlit as st
-except ModuleNotFoundError: 
-    install('streamlit')
-    
 # try:
 #     from pandas_profiling import ProfileReport
 # except ModuleNotFoundError: 
