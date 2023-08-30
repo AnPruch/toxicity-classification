@@ -1,11 +1,3 @@
-import subprocess
-import sys
-
-def install(package):
-    subprocess.run([sys.executable, "-m", "pip", "install", package], check=True)
-
-install('scikit-learn')
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
