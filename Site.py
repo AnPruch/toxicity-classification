@@ -1,4 +1,5 @@
 import pandas as pd
+import sklearn
 from Model import data, NBdata
 import streamlit as st
 
