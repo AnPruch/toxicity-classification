@@ -3,18 +3,6 @@ from Model import data, NBdata
 import streamlit as st
 
 
-# try:
-#     from pandas_profiling import ProfileReport
-# except ModuleNotFoundError: 
-#     install('pandas-profiling')
-    
-# try:
-#     from streamlit_pandas_profiling import st_profile_report
-# except ModuleNotFoundError: 
-#     install('streamlit-pandas-profiling')
-
-
-    
 st.title('Автоматическое определение токсичных сообщений')
 st.write(
     'Программа была обучена на дата-сете "Russian Language Toxic Comments": https://www.kaggle.com/datasets/blackmoon/russian-language-toxic-comments')
