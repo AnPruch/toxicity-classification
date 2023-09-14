@@ -4,6 +4,7 @@ import streamlit as st
 
 
 st.title('Автоматическое определение токсичных сообщений')
+
 st.write(
     'Программа была обучена на дата-сете "Russian Language Toxic Comments": https://www.kaggle.com/datasets/blackmoon/russian-language-toxic-comments')
 
